@@ -10,6 +10,7 @@
 
 .Input {
     display: block;
+    margin: 10px auto;
 }
 
 @media (width: 600px) {
