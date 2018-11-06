@@ -52,7 +52,7 @@ const reducer = (state = initialState, action) => {
         case actionTypes.FETCH_ORDERS_SUCCESS: return fetchOrdersSuccess(state, action);    
         case actionTypes.FETCH_ORDERS_FAIL: return fetchOrdersFail(state, action);        
         default: return state;
-    };
+    }
 };
 
 export default reducer;
