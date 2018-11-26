@@ -1,4 +1,3 @@
-import axios from 'axios';
 import * as actionTypes from './actionTypes';
 
 export const authStart = () => {
@@ -41,7 +40,7 @@ export const checkAuthTimeout = (expirationTime) => {
     return {
         type: actionTypes.AUTH_CHECK_TIMEOUT,
         expirationTime: expirationTime
-    }
+    };
     //return dispatch => {
     //    setTimeout(() => {
     //        dispatch(logout());
@@ -55,30 +54,18 @@ export const auth = (email, password, isSignup) => {
         email: email,
         password: password,
         isSignup: isSignup
-    }
+    };
 };
 
 export const setAuthRedirectPath = (path) => {
     return {
         type: actionTypes.SET_AUTH_REDIRECT_PATH,
         path: path
-    }
+    };
 };
 
 export const authCheckState = () => {
-    return dispatch => {
-        const token = localStorage.getItem('token');
-        if (!token) {
-            dispatch(logout());
-        } else {
-            const expirationDate = new Date(localStorage.getItem('expirationDate'));
-            if (expirationDate <= new Date ()){
-                    dispatch(logout());
-                }else{
-                const userId = localStorage.getItem('userId');
-                dispatch(authSuccess(token, userId));
-                dispatch(checkAuthTimeout((expirationDate.getTime() - new Date().getTime()) / 1000));               
-            }   
-        }
-    };
+   return {
+       type:actionTypes.AUTH_CHECK_STATE
+   };
 };
