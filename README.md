@@ -1,4 +1,4 @@
-<a href="https://burger-creator.firebaseapp.com/">See on web.</a>
+<a href="https://burger-creator.firebaseapp.com/">See on web</a>
 
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
